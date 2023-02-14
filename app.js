@@ -1,55 +1,71 @@
 'use strict'
 
 
-function Employee(id, full_name, department, level, img_url, salary) {
+function Employee(id, full_name, department, level, img_url) {
     this.id = id;
     this.full_name = full_name;
     this.department = department;
     this.level = level;
     this.img_url = img_url;
-    this.salary = salary;
+    this.salary = 0;
 }
 
-Employee.prototype.print_id=function(){
+
+Employee.prototype.print_id = function () {
     return this.id;
 }
 
-Employee.prototype.print_name=function(){
+Employee.prototype.print_name = function () {
     return this.full_name;
 }
 
-Employee.prototype.print_department=function(){
+Employee.prototype.print_department = function () {
     return this.department;
 }
 
-Employee.prototype.print_level=function(){
+Employee.prototype.print_level = function () {
     return this.level;
 }
 
 Employee.prototype.calc_salary = function (min, max) {
-    let salary = (Math.floor((Math.random() * min) + max)) 
-    let salary_after_tax = salary - ((7.5/100)*salary)  
-    return salary_after_tax;
+    let salary = (Math.floor((Math.random() * min) + max))
+    let salary_after_tax = salary - ((7.5 / 100) * salary)
+    this.salary = salary_after_tax;
+    //return salary;
 }
 
+// calc the new epmloyee salary using the entered level and the calc_salary fun
+Employee.prototype.salary_By_EmpLevel = function () {
+    let min = 0;
+    let max = 0;
+
+    if (this.level == "Senior") {
+        min = 500;
+        max = 1500;
+    }
+
+    else if (this.level == "Mid-Senior") {
+        min = 500;
+        max = 1000;
+    }
+
+    else if (this.level == "Junior") {
+        min = 500;
+        max = 500;
+    }
+
+    this.calc_salary(min, max);
+
+}
 
 // let senior_salary =     (Math.floor((Math.random() * 500) +  1500)) - (7.5/100); //max=2000 , min=1500 --> random to 500 and add it to 1500 
 // let mid_senior_salary = (Math.floor((Math.random() * 500) +  1000)) - (7.5/100); //max=1500 , min=1000 --> random to 500 and add it to 1000 
 // let junior_salary =     (Math.floor((Math.random() * 500) +  500)) - (7.5/100);  //max=1000 , min=500  --> random to 500 and add it to 500 
 
 
-let senior_min_salary= 500;
-let senior_max_salary= 1500;
-
-let midsenior_min_salary= 500;
-let midsenior_max_salary= 1000;
-
-let junior_min_salary= 500;
-let junior_max_salary= 500;
-
 
 //Employee 1000
-let employee1000 = new Employee(1000,"Ghazi Samer", "Administration","Senior");
+let employee1000 = new Employee(1000, "Ghazi Samer", "Administration", "Senior", "");
 
 let id1000 = document.getElementById('id1000');
 id1000.innerHTML += `${employee1000.print_id()}`;
@@ -64,11 +80,12 @@ let level1000 = document.getElementById('level1000');
 level1000.innerHTML += `${employee1000.print_level()}`;
 
 let salary1000 = document.getElementById('salary1000');
-salary1000.innerHTML += `${employee1000.calc_salary(senior_min_salary,senior_max_salary)+'$'}`;
+employee1000.salary_By_EmpLevel();
+salary1000.innerHTML += `${employee1000.salary + '$'}`;
 
 
 //Employee 1001
-let employee1001 = new Employee(1001,"Lana Ali","Finance","Senior");
+let employee1001 = new Employee(1001, "Lana Ali", "Finance", "Senior", "");
 
 let id1001 = document.getElementById('id1001');
 id1001.innerHTML += `${employee1001.print_id()}`;
@@ -83,11 +100,12 @@ let level1001 = document.getElementById('level1001');
 level1001.innerHTML += `${employee1001.print_level()}`;
 
 let salary1001 = document.getElementById('salary1001');
-salary1001.innerHTML += `${employee1001.calc_salary(senior_min_salary,senior_max_salary)+'$'}`;
+employee1001.salary_By_EmpLevel();
+salary1001.innerHTML += `${employee1001.salary + '$'}`;
 
 
 //Employee 1002
-let employee1002 = new Employee(1002,"Tamara Ayoub", "Marketing","Senior");
+let employee1002 = new Employee(1002, "Tamara Ayoub", "Marketing", "Senior", "");
 
 let id1002 = document.getElementById('id1002');
 id1002.innerHTML += `${employee1002.print_id()}`;
@@ -102,11 +120,12 @@ let level1002 = document.getElementById('level1002');
 level1002.innerHTML += `${employee1002.print_level()}`;
 
 let salary1002 = document.getElementById('salary1002');
-salary1002.innerHTML += `${employee1002.calc_salary(senior_min_salary,senior_max_salary)+'$'}`;
+employee1002.salary_By_EmpLevel();
+salary1002.innerHTML += `${employee1002.salary + '$'}`;
 
 
 //Employee 1003
-let employee1003 = new Employee(1003,"Safi Walid","Administration","Mid-Senior");
+let employee1003 = new Employee(1003, "Safi Walid", "Administration", "Mid-Senior", "");
 
 let id1003 = document.getElementById('id1003');
 id1003.innerHTML += `${employee1003.print_id()}`;
@@ -121,11 +140,12 @@ let level1003 = document.getElementById('level1003');
 level1003.innerHTML += `${employee1003.print_level()}`;
 
 let salary1003 = document.getElementById('salary1003');
-salary1003.innerHTML += `${employee1003.calc_salary(midsenior_min_salary,midsenior_max_salary)+'$'}`;
+employee1003.salary_By_EmpLevel();
+salary1003.innerHTML += `${employee1003.salary + '$'}`;
 
 
 //Employee 1004
-let employee1004 = new Employee(1004,"Omar Zaid","Development", "Senior");
+let employee1004 = new Employee(1004, "Omar Zaid", "Development", "Senior", "");
 
 let id1004 = document.getElementById('id1004');
 id1004.innerHTML += `${employee1004.print_id()}`;
@@ -140,10 +160,11 @@ let level1004 = document.getElementById('level1004');
 level1004.innerHTML += `${employee1004.print_level()}`;
 
 let salary1004 = document.getElementById('salary1004');
-salary1004.innerHTML += `${employee1004.calc_salary(senior_min_salary,senior_max_salary)+'$'}`;
+employee1004.salary_By_EmpLevel();
+salary1004.innerHTML += `${employee1004.salary + '$'}`;
 
 //Employee 1005
-let employee1005 = new Employee(1005,"Rana Saleh","Development","Junior");
+let employee1005 = new Employee(1005, "Rana Saleh", "Development", "Junior", "");
 
 let id1005 = document.getElementById('id1005');
 id1005.innerHTML += `${employee1005.print_id()}`;
@@ -158,11 +179,12 @@ let level1005 = document.getElementById('level1005');
 level1005.innerHTML += `${employee1005.print_level()}`;
 
 let salary1005 = document.getElementById('salary1005');
-salary1005.innerHTML += `${employee1005.calc_salary(junior_min_salary,junior_max_salary)+'$'}`;
+employee1005.salary_By_EmpLevel();
+salary1005.innerHTML += `${employee1005.salary + '$'}`;
 
 
 //Employee 1006
-let employee1006 = new Employee(1006,"Hadi Ahmad","Finance","Mid-Senior");
+let employee1006 = new Employee(1006, "Hadi Ahmad", "Finance", "Mid-Senior", "");
 
 let id1006 = document.getElementById('id1006');
 id1006.innerHTML += `${employee1006.print_id()}`;
@@ -177,4 +199,100 @@ let level1006 = document.getElementById('level1006');
 level1006.innerHTML += `${employee1006.print_level()}`;
 
 let salary1006 = document.getElementById('salary1006');
-salary1006.innerHTML += `${employee1006.calc_salary(midsenior_min_salary,midsenior_max_salary)+'$'}`;
+employee1006.salary_By_EmpLevel();
+salary1006.innerHTML += `${employee1006.salary + '$'}`;
+
+
+
+
+
+
+let new_Empid = generateEmployeeID();
+
+
+Employee.prototype.render = function () {
+
+    const container = document.getElementById('mySection');
+
+    const divEl = document.createElement('div');
+    divEl.classList.add("renderDiv");
+    container.appendChild(divEl);
+
+    const img_render = document.createElement('img');
+    img_render.classList.add("renderImg");
+    divEl.appendChild(img_render);
+    if (this.img_url) {
+        img_render.setAttribute('src', this.img_url);
+    }
+    else {
+        img_render.setAttribute('src', "imgs/def-Emp.png");
+    }
+
+    const id_render = document.createElement('h4');
+    id_render.classList.add("renderId");
+    divEl.appendChild(id_render);
+    id_render.textContent = `ID: ${new_Empid}`;
+
+    const fullName_render = document.createElement('h4');
+    fullName_render.classList.add("renderFullname");
+    divEl.appendChild(fullName_render);
+    fullName_render.textContent = `Full Name: ${this.full_name}`;
+
+    const department_render = document.createElement('h4');
+    department_render.classList.add("renderDepartment");
+    divEl.appendChild(department_render);
+    department_render.textContent = `Department: ${this.department}`;
+
+    const level_render = document.createElement('h4');
+    level_render.classList.add("renderLevel");
+    divEl.appendChild(level_render);
+    level_render.textContent = `Level: ${this.level}`;
+
+    const salary_render = document.createElement('h4');
+    salary_render.classList.add("renderSalary");
+    divEl.appendChild(salary_render);
+    salary_render.textContent = `Salary: ${this.salary}$`;
+}
+
+
+
+
+
+// function for generating a random new id
+function generateEmployeeID() {
+    let generated_id = Math.floor(1006 + Math.random() * 9000);
+    return generated_id;
+}
+
+
+
+let Emp_form = document.getElementById("Emp_form");
+Emp_form.addEventListener('submit', add_NewEmp)
+
+function add_NewEmp(event) {
+
+
+
+    event.preventDefault();
+    console.log(event);
+
+    let newEmp_fullname = event.target.newEmp_fullname.value;
+    let newEmp_department = event.target.newEmp_department.value;
+    let newEmp_level = event.target.newEmp_level.value;
+    let newEmp_imageUrl = event.target.newEmp_imageUrl.value;
+
+
+    //let new_Empsalary = this.salary;
+
+    let new_Employee = new Employee(new_Empid, newEmp_fullname, newEmp_department, newEmp_level, newEmp_imageUrl);
+
+    new_Employee.salary_By_EmpLevel();
+
+    new_Employee.render();
+}
+
+
+
+
+
+
