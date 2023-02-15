@@ -119,66 +119,69 @@
         <br>
         <br>
 
-        <form id="Emp_form">
+        <div id="formDiv">
+            <form id="Emp_form">
 
-            <fieldset>
-                <legend>Add new Employee</legend>
+                <fieldset>
+                    <legend>Add new Employee</legend>
 
-                <br>
+                    <br>
 
-                <label for="newEmp_fullname"><b>Enter Full name: </b></label>
-                <br>
-                <input type="text" name="newEmp_fullname" id="newEmp_fullname" placeholder="Full Name" required
-                    class="formInput">
+                    <label for="newEmp_fullname"><b>Enter Full name: </b></label>
+                    <br>
+                    <input type="text" name="newEmp_fullname" id="newEmp_fullname" placeholder="Full Name" required
+                        class="formInput">
 
-                <br>
-                <br>
+                    <br>
+                    <br>
 
-                <label for="newEmp_department"><b>Enter Department: </b></label>
-                <br>
-                <div class="select">
-                    <select name="newEmp_department" id="newEmp_department" form="Emp_form">
-                        <option class="option">Select</option>
-                        <option value="administration" class="option">Administration</option>
-                        <option value="marketing" class="option">Marketing</option>
-                        <option value="development" class="option">Development</option>
-                        <option value="Finance" class="option">Finance</option>
-                    </select>
-                </div>
-                <br>
-                <br>
+                    <label for="newEmp_department"><b>Enter Department: </b></label>
+                    <br>
+                    <div class="select">
+                        <select name="newEmp_department" id="newEmp_department" form="Emp_form">
+                            <option class="option">Select</option>
+                            <option value="Administration" class="option">Administration</option>
+                            <option value="Marketing" class="option">Marketing</option>
+                            <option value="Development" class="option">Development</option>
+                            <option value="Finance" class="option">Finance</option>
+                        </select>
+                    </div>
+                    <br>
+                    <br>
 
-                <label for="newEmp_level"><b>Enter Level: </b></label>
-                <br>
-                <div class="select">
-                    <select name="newEmp_level" id="newEmp_level" form="Emp_form">
-                        <option class="option">Select</option>
-                        <option value="Junior" class="option">Junior</option>
-                        <option value="Mid-Senior" class="option">Mid-Senior</option>
-                        <option value="Senior" class="option">Senior</option>
-                    </select>
-                </div>
-                <br>
-                <br>
+                    <label for="newEmp_level"><b>Enter Level: </b></label>
+                    <br>
+                    <div class="select">
+                        <select name="newEmp_level" id="newEmp_level" form="Emp_form">
+                            <option class="option">Select</option>
+                            <option value="Junior" class="option">Junior</option>
+                            <option value="Mid-Senior" class="option">Mid-Senior</option>
+                            <option value="Senior" class="option">Senior</option>
+                        </select>
+                    </div>
+                    <br>
+                    <br>
 
-                <label for="newEmp_imageUrl"><b>Enter Image URL: </b></label>
-                <br>
-                <input type="text" name="newEmp_imageUrl" id="newEmp_imageUrl" placeholder="Image URL"
-                    class="formInput">
+                    <label for="newEmp_imageUrl"><b>Enter Image URL: </b></label>
+                    <br>
+                    <input type="text" name="newEmp_imageUrl" id="newEmp_imageUrl" placeholder="Image URL"
+                        class="formInput">
 
-                <br>
-                <br>
+                    <br>
+                    <br>
 
-                <input type="submit" value="Add" class="addbutton">
-                <br>
-                <input type="reset" class="resetbutton">
+                    <input type="submit" value="Add" class="addbutton">
+                    <br>
+                    <input type="reset" class="resetbutton">
 
-            </fieldset>
+                </fieldset>
 
-        </form>
+            </form>
+        </div>
 
-        <section id="mySection">
-            <!-- <div>
+        <div id="sectionDiv">
+            <section id="mySection">
+                <!-- <div>
                 <img src="imgs/IMG_3654.jpg">
                 <h3>ID</h3>
                 <h3>name</h3>
@@ -186,7 +189,9 @@
                 <h3>level</h3>
                 <h3>salary</h3>
             </div> -->
-        </section>
+            </section>
+        </div>
+
     </main>
 
 

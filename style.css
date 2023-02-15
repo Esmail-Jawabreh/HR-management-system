@@ -70,6 +70,7 @@ footer {
     height: 85.5px;
     padding: 8px;
     text-align: center;
+    margin-top: 42%;
 }
 
 
@@ -250,9 +251,6 @@ footer h3 {
     text-decoration: none;
 }
 
-/* .search-btn>i {
-    fontsize: 30px;
-} */
 
 .search-text {
     border: none;
@@ -275,14 +273,6 @@ footer h3 {
 
 
 
-/* table design */
-
-/* main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-  } */
 
 table {
     color: rgb(63, 78, 79);
@@ -359,7 +349,7 @@ td {
 
 #Emp_form {
     margin-left: 35%;
-    margin-top: 3%;
+    margin-top: 0%;
     position: relative;
     display: flex;
     justify-content: center;
@@ -367,7 +357,7 @@ td {
     width: 450px;
     height: 550px;
     background: transparent;
-    border: 10px solid var(--light-bacco);
+    border: 7px solid var(--light-bacco);
     border-radius: 15px;
     transition: 0.5s;
     text-align: center;
@@ -519,10 +509,65 @@ select:hover {
 /* render form */
 .renderDiv{
     text-align: center;
+    margin-top: 75px;
+    margin-bottom: 20px;
+    border-style: solid;
+    border-color:  rgb(63, 78, 79);
+    border: 7px solid #DCD7C9;
+    width: 450px;
+    margin-left: 35%;
+    border-radius: 15px;
+    background-color: rgb(63, 78, 79);
+}
+
+.renderDiv:hover {
+    border: 4px solid #DCD7C9;
+    box-shadow: 0 0 20px rgb(63, 78, 79),
+        inset 0 0 20px rgb(63, 78, 79);
+    background-color: rgb(63, 78, 79);
+    color: #DCD7C9;
 }
 
 
-.renderImg{
-    width: 100px;
-    height: 100px;
+.renderImg {
+    --s: 77px;
+    --b: 4.5px;
+    --g: 6.5px;
+    --c: #DCD7C9;
+    margin-top: 9%;
+
+    width: var(--s);
+    aspect-ratio: 1;
+    outline: calc(var(--s)/2) solid #0009;
+    outline-offset: calc(var(--s)/-2);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.renderImg:hover {
+    outline: var(--b) solid var(--c);
+    outline-offset: var(--g);
+}
+
+.renderImg {
+    border-radius: 50%;
+}
+
+.renderId ,.renderFullname , .renderDepartment ,.renderLevel, .renderSalary{
+    color: #DCD7C9;
+    padding: 2.5%;
+}
+
+#sectionDiv , #formDiv{
+    float:left; 
+    display:inline; 
+    width: 40%;
+}
+
+.renderSalary{
+    margin-bottom: 9%;
+}
+
+.renderId{
+    margin-top: 2%;
 }
