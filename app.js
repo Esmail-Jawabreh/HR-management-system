@@ -207,7 +207,30 @@ salary1006.innerHTML += `${employee1006.salary + '$'}`;
 
 
 
-let new_Empid = generateEmployeeID();
+
+
+
+
+
+
+
+// function for generating a random new id
+function generateEmployeeID() {
+    let generated_id = (Math.floor(1006 + Math.random() * 9000));
+    return generated_id;
+}
+
+// function for generating a random new id --> num keeps changing
+// function generateEmployeeID() {
+//     const timestamp = new Date().getTime(); 
+//     const randomNum = Math.floor( 1006 + Math.random() * 9000); 
+//     const generated_id = (timestamp + randomNum) % 10000; 
+//     return generated_id; 
+//   }
+
+
+
+
 
 
 Employee.prototype.render = function () {
@@ -231,7 +254,7 @@ Employee.prototype.render = function () {
     const id_render = document.createElement('h4');
     id_render.classList.add("renderId");
     divEl.appendChild(id_render);
-    id_render.textContent = `ID: ${new_Empid}`;
+    id_render.textContent = `ID: ${this.id}`;
 
     const fullName_render = document.createElement('h4');
     fullName_render.classList.add("renderFullname");
@@ -257,15 +280,6 @@ Employee.prototype.render = function () {
 
 
 
-
-// function for generating a random new id
-function generateEmployeeID() {
-    let generated_id = Math.floor(1006 + Math.random() * 9000);
-    return generated_id;
-}
-
-
-
 let Emp_form = document.getElementById("Emp_form");
 Emp_form.addEventListener('submit', add_NewEmp)
 
@@ -281,11 +295,12 @@ function add_NewEmp(event) {
     let newEmp_level = event.target.newEmp_level.value;
     let newEmp_imageUrl = event.target.newEmp_imageUrl.value;
 
-
-    //let new_Empsalary = this.salary;
+    
+    let new_Empid = generateEmployeeID();
 
     let new_Employee = new Employee(new_Empid, newEmp_fullname, newEmp_department, newEmp_level, newEmp_imageUrl);
 
+    
     new_Employee.salary_By_EmpLevel();
 
     new_Employee.render();
