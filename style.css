@@ -560,6 +560,7 @@ select:hover {
     float:left; 
     display:inline; 
     width: 40%;
+    
 }
 
 .renderSalary{
@@ -569,3 +570,13 @@ select:hover {
 .renderId{
     margin-top: 2%;
 }
+
+/* #mySection{
+   display: flex;
+         
+        
+       
+  
+
+} */
+  

@@ -1,6 +1,7 @@
 'use strict'
 
 
+let emplArr = [];
 function Employee(id, full_name, department, level, img_url) {
     this.id = id;
     this.full_name = full_name;
@@ -8,6 +9,7 @@ function Employee(id, full_name, department, level, img_url) {
     this.level = level;
     this.img_url = img_url;
     this.salary = 0;
+    emplArr.push(this);
 }
 
 
@@ -279,7 +281,6 @@ Employee.prototype.render = function () {
 
 
 
-
 let Emp_form = document.getElementById("Emp_form");
 Emp_form.addEventListener('submit', add_NewEmp)
 
@@ -288,7 +289,7 @@ function add_NewEmp(event) {
 
 
     event.preventDefault();
-    console.log(event);
+    
 
     let newEmp_fullname = event.target.newEmp_fullname.value;
     let newEmp_department = event.target.newEmp_department.value;
@@ -304,10 +305,13 @@ function add_NewEmp(event) {
     new_Employee.salary_By_EmpLevel();
 
     new_Employee.render();
+
+   console.log(emplArr);
+    
+   
+    const Employee_Json = JSON.stringify(emplArr);
+    localStorage.setItem("allEmployees", Employee_Json);
 }
-
-
-
 
 
 
