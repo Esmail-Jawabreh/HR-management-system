@@ -571,12 +571,28 @@ select:hover {
     margin-top: 2%;
 }
 
-/* #mySection{
-   display: flex;
-         
-        
-       
-  
 
-} */
-  
+
+
+
+
+#tableHead {
+    background-color: rgb(63, 78, 79);
+    color: #DCD7C9;
+    height: 70px;
+}
+
+
+#tableFooter {
+    background-color: rgb(63, 78, 79);
+    color: #DCD7C9;
+    height: 40px;
+}
+
+#p2_Footer{
+    margin-top: 140px;
+}
+
+#p2_Table{
+    margin-top: 60px;
+}
