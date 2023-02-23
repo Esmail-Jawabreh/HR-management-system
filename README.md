@@ -4,4 +4,4 @@
 ![Figma](imgs/homePage.png)
 
 ## Accounting Page framework
-![Figma](imgs/accountingPage.png)
+![Figma](imgs/accountingPage2.png)
