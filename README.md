@@ -1,4 +1,7 @@
 # HR-management-system
 
-## Home Page Design
-![Figma](imgs/Figma_HomePage.png)
+## Home Page framework
+![Figma](imgs/homePage.png)
+
+## Accounting Page framework
+![Figma](imgs/accountingPage.png)
